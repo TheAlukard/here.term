@@ -110,6 +110,8 @@ M.setup = function(opts)
 		},
 	})
 
+	toggle_term = toggle_terminal
+
 	if vim.fn.exists(":" .. opts.startup_command) > 0 then
 		vim.g.here_startup_command = opts.startup_command
 	else
