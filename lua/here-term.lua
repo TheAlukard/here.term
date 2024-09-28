@@ -60,7 +60,7 @@ local function enter_terminal(currbuff, here_termbuff)
 	end
 end
 
-local function toggle_terminal()
+function toggle_terminal()
 	local here_prevbuff = vim.g.here_prevbuff
 	local here_termbuff = vim.g.here_termbuff
 	local currbuff = vim.api.nvim_get_current_buf()
@@ -119,7 +119,7 @@ M.setup = function(opts)
 	end
 
 	-- here.term mappings
-	map({ "n", "t" , "i" }, opts.mappings.toggle, toggle_terminal, "Toggle terminal")
+	map({ "n", "t" }, opts.mappings.toggle, toggle_terminal, "Toggle terminal")
 	map({ "n", "t" }, opts.mappings.kill, kill_terminal, "Kill terminal")
 
 	if opts.extra_mappings.enable then
