@@ -60,7 +60,7 @@ local function enter_terminal(currbuff, here_termbuff)
 	end
 end
 
-function toggle_terminal()
+local function toggle_terminal()
 	local here_prevbuff = vim.g.here_prevbuff
 	local here_termbuff = vim.g.here_termbuff
 	local currbuff = vim.api.nvim_get_current_buf()
@@ -110,8 +110,6 @@ M.setup = function(opts)
 		},
 	})
 
-	toggle_term = toggle_terminal
-
 	if vim.fn.exists(":" .. opts.startup_command) > 0 then
 		vim.g.here_startup_command = opts.startup_command
 	else
@@ -140,5 +138,7 @@ M.setup = function(opts)
 		map("t", opts.extra_mappings.right, [[<C-\><C-n><C-W>l]], "Move to window right")
 	end
 end
+
+M.toggle = toggle_terminal
 
 return M
