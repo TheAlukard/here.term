@@ -60,7 +60,7 @@ local function enter_terminal(currbuff, here_termbuff)
 	end
 end
 
-local function toggle_terminal()
+function toggle_terminal()
 	local here_prevbuff = vim.g.here_prevbuff
 	local here_termbuff = vim.g.here_termbuff
 	local currbuff = vim.api.nvim_get_current_buf()
