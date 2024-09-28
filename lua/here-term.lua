@@ -119,7 +119,7 @@ M.setup = function(opts)
 	end
 
 	-- here.term mappings
-	map({ "n", "t" }, opts.mappings.toggle, toggle_terminal, "Toggle terminal")
+	map({ "n", "t" , "i" }, opts.mappings.toggle, toggle_terminal, "Toggle terminal")
 	map({ "n", "t" }, opts.mappings.kill, kill_terminal, "Kill terminal")
 
 	if opts.extra_mappings.enable then
